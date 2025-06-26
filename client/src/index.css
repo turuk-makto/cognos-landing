@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(0, 0%, 100%);
+  --foreground: hsl(240, 10%, 3.9%);
+  --muted: hsl(240, 4.8%, 95.9%);
+  --muted-foreground: hsl(240, 5%, 64.9%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(240, 10%, 3.9%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(240, 10%, 3.9%);
+  --border: hsl(240, 5.9%, 90%);
+  --input: hsl(240, 5.9%, 90%);
+  --primary: hsl(217, 91%, 60%);
+  --primary-foreground: hsl(0, 0%, 98%);
+  --secondary: hsl(240, 4.8%, 95.9%);
+  --secondary-foreground: hsl(240, 5.3%, 11%);
+  --accent: hsl(240, 4.8%, 95.9%);
+  --accent-foreground: hsl(240, 5.9%, 10%);
+  --destructive: hsl(0, 84.2%, 60.2%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(240, 5%, 64.9%);
+  --radius: 0.5rem;
+  
+  /* Custom MIRA brand colors */
+  --mira-blue: #4F7CAC;
+  --mira-blue-light: #7EA6C6;
+  --mira-gray-light: #F5F7FA;
+  --mira-white: #FFFFFF;
+  --mira-green: #A3C9A8;
+  --mira-green-light: #B9D7BF;
+  --mira-blue-deep: #273043;
+  --mira-yellow: #FCD581;
+  
+  /* Update existing primary colors to match new palette */
+  --primary: #4F7CAC;
+  --primary-foreground: #FFFFFF;
+  --background: #FFFFFF;
+  --card: #F5F7FA;
+  --muted: #F5F7FA;
+}
+
+.dark {
+  --background: hsl(240, 10%, 3.9%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(240, 3.7%, 15.9%);
+  --muted-foreground: hsl(240, 5%, 64.9%);
+  --popover: hsl(240, 10%, 3.9%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(240, 10%, 3.9%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(240, 3.7%, 15.9%);
+  --input: hsl(240, 3.7%, 15.9%);
+  --primary: hsl(217, 91%, 60%);
+  --primary-foreground: hsl(0, 0%, 98%);
+  --secondary: hsl(240, 3.7%, 15.9%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(240, 3.7%, 15.9%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(240, 4.9%, 83.9%);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  /* MIRA Colors - Main Palette */
+  .text-mira-blue { color: var(--mira-blue); }
+  .text-mira-blue-light { color: var(--mira-blue-light); }
+  .text-mira-blue-deep { color: var(--mira-blue-deep); }
+  .text-mira-green { color: var(--mira-green); }
+  .text-mira-yellow { color: var(--mira-yellow); }
+  
+  .bg-mira-blue { background-color: var(--mira-blue); }
+  .bg-mira-blue-light { background-color: var(--mira-blue-light); }
+  .bg-mira-gray-light { background-color: var(--mira-gray-light); }
+  .bg-mira-white { background-color: var(--mira-white); }
+  .bg-mira-green { background-color: var(--mira-green); }
+  .bg-mira-green-light { background-color: var(--mira-green-light); }
+  .bg-mira-blue-deep { background-color: var(--mira-blue-deep); }
+  .bg-mira-yellow { background-color: var(--mira-yellow); }
+  
+  .border-mira-blue { border-color: var(--mira-blue); }
+  .border-mira-green { border-color: var(--mira-green); }
+  
+  .hover\:bg-mira-blue-light:hover { background-color: var(--mira-blue-light); }
+  .hover\:bg-mira-green-light:hover { background-color: var(--mira-green-light); }
+  .hover\:text-mira-blue:hover { color: var(--mira-blue); }
+  .hover\:text-mira-blue-light:hover { color: var(--mira-blue-light); }
+}
